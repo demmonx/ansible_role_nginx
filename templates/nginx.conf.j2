@@ -1,4 +1,4 @@
-user       {{ nginx_user }} {{ nginx_user }};  ## Default: nobody
+user       {{ webserver_user }} {{ webserver_user }};  ## Default: nobody
 worker_processes  {{ nginx_workers_nb }};  ## Default: 1
 error_log  logs/error.log;
 pid        logs/nginx.pid;
@@ -25,10 +25,10 @@ http {
     listen       80;
     server_name  localhost;
     access_log   logs/domain1.access.log  main;
-    root         {{ nginx_folder }};
+    root         {{ web_folder }};
 
     location ~ \.php$ {
-      fastcgi_pass   127.0.0.1:1025;
+      fastcgi_pass 127.0.0.1:9000;
     }
   }
 }

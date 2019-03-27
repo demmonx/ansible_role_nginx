@@ -1,24 +1,24 @@
 ---
-- name: Ensure group "nginx_user" exists
+- name: Ensure group "webserver_user" exists
   group:
-    name: "{{ nginx_user }}"
+    name: "{{ webserver_user }}"
     state: present
 
-- name: Ensure user "nginx_user" exists
+- name: Ensure user "webserver_user" exists
   user:
-    name: "{{ nginx_user }}"
+    name: "{{ webserver_user }}"
     state: present
-    groups: "{{ nginx_user }}"
+    groups: "{{ webserver_user }}"
     create_home: no
     append: yes
 
-- name: "Create folder {{ nginx_folder }}"
+- name: "Create folder {{ web_folder }}"
   file:
-    path: "{{ nginx_folder }}"
+    path: "{{ web_folder }}"
     recurse: yes
     state: directory
-    owner: {{ nginx_user }}
-    group: {{ nginx_user }}
+    owner: {{ webserver_user }}
+    group: {{ webserver_user }}
     mode: 0775
 
 - name: Edit nginx conf file
