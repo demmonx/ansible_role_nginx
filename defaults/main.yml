@@ -1,0 +1,4 @@
+nginx_folder: /var/www/html
+nginx_user: www-data
+nginx_workers_con: 2048
+nginx_workers_nb: 4
