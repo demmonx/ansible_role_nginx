@@ -21,6 +21,15 @@
     group: "{{ webserver_user }}"
     mode: 0775
 
+- name: "Create log folder {{ web_folder }}"
+  file:
+    path: "/usr/share/nginx/logs"
+    recurse: yes
+    state: directory
+    owner: "{{ webserver_user }}"
+    group: "{{ webserver_user }}"
+    mode: 0775  
+
 - name: Edit nginx conf file
   template:
     src: nginx.conf.j2
