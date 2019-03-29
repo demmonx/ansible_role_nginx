@@ -5,7 +5,7 @@ This module install and configure nginx [https://www.nginx.com/] through Ansible
 ## Getting started
 If you don't set any `vars`, nginx will be installed but without any specific settings. In order to deploy your website, you may configure `vars` to match your env 
 
-##Variables
+## Variables
 | Variable | Default | Description
 | --- | --- | --- |
 web_folder | /var/www/html | HTML root folder
